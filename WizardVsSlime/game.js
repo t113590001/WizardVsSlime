@@ -648,8 +648,8 @@ function playerControl() {
     player.speedY = 0;
 
     if (gameArea.keys){
-        if (gameArea.keys['ArrowLeft']){player.speedX = -8;}
-        if (gameArea.keys['ArrowRight']){player.speedX = 8;}
+        if (gameArea.keys['ArrowLeft'] || gameArea.keys['a']){player.speedX = -8;}
+        if (gameArea.keys['ArrowRight'] || gameArea.keys['d']){player.speedX = 8;}
         if (gameArea.keys[' ']){player.useNormalAttack();}
     }
 }
@@ -709,4 +709,5 @@ function gameOver(){
     gameArea.stop();
     gameArea.overlay("Press \"reset\" to ready again");
     statusValue.textContent = "Game Over";
+
 }
