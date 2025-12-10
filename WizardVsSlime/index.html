@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="game.css">
+    <script defer src="./game.js"></script>
+</head>
+
+<body onload="startGame()">
+
+    <div id="bar">Wizard v.s. Slime</div>
+
+    <div id="leftBox" class="box">
+        <p style="font-size: 23px;">Game Rules</p>
+        <p>Click the buttons on the right side to play, pause, reset the game, or adjust the speed of the whole game.</p>
+        <p>Press the Left / Right Arrow keys to move yourself (the wizard), and press the Space key to cast magic.</p>
+        <p>The cute slimes will move downward toward the bottom boundary, and your goal is to stop them by casting magic to kill them.</p>
+        <p>You will gain 10 points for each slime you defeat. Try to get as many points as you can before you die.</p>
+        <p>If those cute slimes touch the bottom boundary or you, you will take damage and then they will leave ecstatically.</p>
+        <p>You will lose the game if your lives (the wizard’s HP) drop to 0.</p>
+        <p>The difficulty of the game increases gradually over time: the spawn rate of slimes and their movement speed get faster and faster, while mist emerges and gets thicker.</p>
+    </div>
+
+    <div id="rightBox" class="box" style="text-align:center; margin: 20px;">
+        <div class="row">
+            <span class="label">Score:</span>
+            <span class="value" id="scoreValue">0</span>
+        </div>
+        <div class="row">
+            <span class="label">Lives:</span>
+            <span class="value" id="livesValue">10/10</span>
+        </div>
+        <div class="row">
+            <span class="label">Speed:</span>
+            <span class="value" id="speedValue">1.0 x</span>
+        </div>
+        <div class="row">
+            <span class="label">Game Status:</span>
+            <span class="value" id="statusValue">Opening</span>
+        </div>
+
+        <div id="btns">
+            <button onclick="play()">play</button>
+            <button onclick="pause()">pause</button>
+            <button onclick="reset()">reset</button>
+            <button onclick="speedUp()">speed +</button>
+            <button onclick="speedDown()">speed -</button>
+        </div>
+    </div>
+
+</body>
+</html>
